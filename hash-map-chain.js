@@ -21,11 +21,11 @@ class HashMapChain {
       throw new Error('Key error');
     }
     let head = this._hashTable[index];
-    if (head.key === key) {
+    if (head.key === key && !head.DELETED) {
       return head.value;
     }
     while (head !== null) {
-      if (head.key === key) {
+      if (head.key === key && !head.DELETED) {
         return head.value;
       } else head = head.next;
     }
